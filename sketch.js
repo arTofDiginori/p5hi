@@ -1,3 +1,5 @@
+
+
 function getWidth() {
   return windowWidth - 10;
 }
@@ -5,6 +7,8 @@ function getWidth() {
 function getHeight() {
   return windowHeight - 10;
 }
+
+let circle_diameter = 100;
 
 function setup() {
   createCanvas(getWidth(), getHeight());
@@ -14,7 +18,6 @@ function setup() {
 
 function draw() {
   background("aqua");
-  // background(0);
 
   if(mouseIsPressed == true) {
     fill(0);
@@ -22,7 +25,8 @@ function draw() {
     fill(255);
   }
 
-  circle(mouseX, getHeight() - 100 / 2, 100);
+  circle_diameter = getWidth() / 3;
+  circle(mouseX, getHeight() - circle_diameter / 2, circle_diameter);
   circle(getWidth() / 2, mouseY, 50);
   
   // Style the arc.
