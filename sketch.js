@@ -21,5 +21,10 @@ function draw() {
 
   circle(mouseX, getHeight() - 100 / 2, 100);
   
-  arc(getWidth() / 2, mouseY, 80, 80, 0, PI + QUARTER_PI, PIE, 5);
+  // Update start and stop angles.
+  noStroke();
+  let biteSize = PI / 16;
+  let startAngle = biteSize * sin(frameCount * 0.1) + biteSize;
+  let endAngle = TWO_PI - startAngle;
+  arc(getWidth() / 2, mouseY, 80, 80, 0, startAngle, endAngle, PIE);
 }

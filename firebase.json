@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "p5hi",
     "public": "/",
     "ignore": [
       "firebase.json",
