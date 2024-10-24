@@ -39,4 +39,9 @@ function draw() {
   let startAngle = biteSize * sin(frameCount * 0.1) + biteSize;
   let endAngle = TWO_PI - startAngle;
   arc(getWidth() / 2, mouseY, 80, 80, startAngle, endAngle, PIE);
+
+  textSize(75)
+  text("🌸", mouseX, 250) //flower
+  textSize(100)
+  text("🐞", 300, mouseX) //ladybug
 }
