@@ -16,9 +16,27 @@ function draw() {
  
   //sun follows y-coordinate of mouse
   sunHeight = mouseY;
+
+  // 색상 계산: 지평선 위/아래에 따라 다른 공식 적용
+  let r, g, b;
+
+  if (sunHeight < horizon) {
+    r = 255;
+    g = Math.floor(255 * (horizon - sunHeight) / horizon);
+    b = Math.floor(255 * (horizon - sunHeight) / horizon);
+    background("lightblue"); // blue sky if above 
+  } else {
+    // 지평선 위: 노란색 계열
+    r = 255;
+    g = Math.floor(255 * (sunHeight - horizon) / horizon);
+    b = 0;
+    background(0); // night sky otherwise
+  }
+
+  background(g);
   
-  let r = Math.floor(255 * sunHeight / horizon);
-  fill(`rgb(${r}, 149, 16)`);
+  // let r = Math.floor(255 * sunHeight / horizon);
+  fill(`rgb(${r}, ${g}, ${b})`);
   circle(centerX, sunHeight, 160);
 
   // draw line for horizon
